@@ -1,7 +1,7 @@
 #include "Android_draw/draw.h"
 #include "fonts/menu/arialbold.h"
 #include "fonts/esp/esp.h"
-#include "fonts/neverlose/bytes.hpp"
+#include "fonts/menu/neverlose/bytes.hpp"
 #include "fonts/neverlose/hashes.hpp"
 
 EGLDisplay display = EGL_NO_DISPLAY;
