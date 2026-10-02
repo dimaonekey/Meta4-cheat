@@ -1,9 +1,7 @@
-# Android.mk
-
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_MODULE           := ach3ron               # sometimes needed
+LOCAL_MODULE := ach3ron
 
 LOCAL_SRC_FILES := \
     ../src/main.cpp \
@@ -38,9 +36,13 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/../includes \
     $(LOCAL_PATH)/../includes/fonts \
+    $(LOCAL_PATH)/../includes/fonts/menu \
+    $(LOCAL_PATH)/../includes/fonts/esp \
     $(LOCAL_PATH)/../includes/internal \
     $(LOCAL_PATH)/../includes/internal/ImGui \
     $(LOCAL_PATH)/../includes/internal/ImGui/backends \
+    $(LOCAL_PATH)/../includes/draw \
+    $(LOCAL_PATH)/../includes/draw/Android_draw \
     $(LOCAL_PATH)/../includes/draw/ImGui \
     $(LOCAL_PATH)/../includes/draw/ImGui/backends \
     $(LOCAL_PATH)/../src \
@@ -59,11 +61,7 @@ LOCAL_CPPFLAGS := \
     -Wno-error=format-security \
     -fno-color-diagnostics \
     -fmerge-all-constants \
-    -fno-ident \
-    
-
-# If you really want -fexceptions (very rare in size-optimized Android native code)
-# LOCAL_CPPFLAGS += -fexceptions
+    -fno-ident
 
 LOCAL_LDFLAGS := \
     -Wl,--build-id=none \
@@ -71,8 +69,7 @@ LOCAL_LDFLAGS := \
     -pie \
     -Wl,-z,relro \
     -Wl,-z,now \
-    -Wl,-z,noexecstack \
-   
+    -Wl,-z,noexecstack
 
 LOCAL_LDLIBS := \
     -llog \
@@ -80,8 +77,5 @@ LOCAL_LDLIBS := \
     -lEGL \
     -lGLESv3 \
     -lz
-
-# Very aggressive stripping — sometimes causes issues, test carefully
-# LOCAL_LDFLAGS += -s
 
 include $(BUILD_EXECUTABLE)
