@@ -2,7 +2,7 @@
 #include "fonts/menu/arialbold.h"
 #include "fonts/esp/esp.h"
 #include "fonts/menu/neverlose/bytes.hpp"
-#include "fonts/neverlose/hashes.hpp"
+#include "fonts/menu/neverlose/hashes.hpp"
 
 EGLDisplay display = EGL_NO_DISPLAY;
 EGLConfig config;
